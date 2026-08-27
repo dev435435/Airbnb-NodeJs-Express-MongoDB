@@ -1,0 +1,71 @@
+<%- include ('../partials/head') %>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+  <!-- Header -->
+  <%- include ('../partials/nav') %>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex flex-col justify-center items-center text-center">
+    <div class="bg-white shadow-lg rounded-2xl p-8 border border-red-100 w-full max-w-md">
+      <h2 class="text-4xl font-bold text-red-600 mb-4">My favourites</h2>
+      <p class="text-gray-700 text-lg mb-6">Here are my favourites:</p>
+
+      <a href="/" 
+        class="bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+        Go Back Home
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6 w-full max-w-4xl">
+      <% if (favouriteHomes.length > 0) { %>
+        <% favouriteHomes.forEach(home => { %>
+          <div class="bg-white rounded-xl shadow hover:shadow-lg border border-red-100 overflow-hidden flex flex-row items-center p-4">
+            
+            <% if (home.Photo) { %>
+              <img src="<%= home.Photo %>"
+                alt="<%= home.houseName %> photo"
+                class="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg shadow-sm border mr-4">
+            <% } else { %>
+              <div class="w-20 h-20 bg-gray-200 flex items-center justify-center text-gray-500 rounded-lg shadow-sm border mr-4">
+                No image
+              </div>
+            <% } %>
+
+            <div class="flex-1 text-left">
+              <h3 class="text-lg font-bold text-red-700"><%= home.houseName %></h3>
+
+              <p class="text-gray-700 text-sm">
+                <span class="font-semibold">Price:</span>
+                <span class="text-green-600"><%= home.Pricepernight || '-' %></span>
+              </p>
+
+              <p class="text-gray-700 text-sm">
+                <span class="font-semibold">Location:</span>
+                <%= home.Locations || '-' %>
+              </p>
+
+              <p class="text-gray-700 text-sm">
+                <span class="font-semibold">Rating:</span>
+                <%= home.Ratings || '-' %>
+              </p>
+
+              <a href="/homes/<%= home._id %>" 
+                class="mt-2 inline-block bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded-md shadow">
+                Details
+              </a>
+              <form action = "/favourite-list/delete-fav/<%= home._id %>" method="POST">
+                <button class="mt-2 inline-block bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded-md shadow">
+                Remove from favourites</button>
+                </form>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p class="text-gray-600 col-span-2">No favourite homes yet.</p>
+      <% } %>
+    </div>
+  </main>
+
+</body>
+</html>

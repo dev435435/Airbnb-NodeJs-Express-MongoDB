@@ -1,0 +1,126 @@
+<%- include ('../partials/head') %>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+
+    <!-- Header -->
+   <%- include('../partials/nav') %>
+
+    <!-- Main Section --> 
+    <main class="flex justify-center items-center mt-16">
+      <form action="/signup" method="POST" 
+        class="bg-white p-8 rounded-2x1 shadow-lg w-full max-w-md border border-red-100">
+        
+        <h2 class="text-2xl font-semibold text-red-600 mb-6 text-center">Register as a new user</h2>
+        <div class="mb-4">
+      
+      
+  <%- include('../partials/error') %>
+       
+
+
+
+        </div>
+        <div class="mb-4">
+          
+          <input 
+            type="text" 
+            name="firstname" 
+            placeholder="First Name"
+            value = "<%= oldInput.firstname ? oldInput.firstname : ''%>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          
+          <input 
+            type="text" 
+            name="lastname" 
+            placeholder="Last Name"
+            value = "<%= oldInput.lastname ? oldInput.lastname : ''%>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            
+          />
+        </div>
+
+        </div>
+        <div class="mb-4">
+          
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="test@pop.com"
+            value = "<%= oldInput.email ? oldInput.email : ''%>"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          />
+        </div>
+        
+        <div class="mb-4">
+          
+          <input 
+            type="password" 
+           
+            name="password" 
+            placeholder="password"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          
+          <input 
+            type="password" 
+            name="confirmpassword" 
+            placeholder="Confirm Your Password"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          />
+       </div>
+          <div class="mb-4">
+            <label>
+          <input 
+            type="radio" 
+            name="userType"
+            value="guest" 
+            id="guest"
+            class="mr-2"
+            checked="<%oldInput.userType ==="guest" %>"
+          />
+          <span>Guest</span></label>
+        
+          <label>
+          <input 
+            type="radio" 
+            name="userType"
+            value="host" 
+            id="host"
+            class="mr-2"
+            checked="<%oldInput.userType ==="host" %>"
+             />
+            <span>Host</span></label>
+        </div>
+        <div class="mb-4">
+          <label>
+          <input 
+          
+            type="checkbox" 
+            name="terms"
+            id="terms"
+            class="mr-2"
+            required
+          /><span class =" text-gray-500">I accept the terms and conditions</span>
+          </label>
+        </div>
+        
+       
+        <button 
+          type="submit" 
+          class="w-full bg-red-600 text-white font-medium py-2 rounded-lg hover:bg-red-700 transition">
+          Sign up
+        </button>
+      </form>
+    </main>
+
+  </body>
+</html>

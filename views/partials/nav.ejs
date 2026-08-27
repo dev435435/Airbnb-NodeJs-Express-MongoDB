@@ -1,0 +1,73 @@
+<header class="bg-red-600 text-white shadow-md">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <a
+      href="/"
+      class="<%= currentPage === 'home' ? ' text-black-400 font-medium transition' :' hover:text-black-400 font-medium{font-weight:600;} transition'%>text-2xl font-bold tracking-wide"
+      >Airbnb</a
+    >
+    
+
+    <% if (isLoggedIn) { %>
+      <% if(user.userType === 'guest') { %>
+      
+    <nav class="space-x-6">
+      <a
+        href="/homes"
+        class="<%= currentPage === 'home' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium{font-weight:500;} transition'%>"
+        >Home-list</a
+      >
+      
+      
+      <a
+        href="/bookings"
+        class="<%= currentPage === 'Addhome' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+        >Bookings</a
+      >
+      <a
+        href="/favourite-list"
+        class="<%= currentPage === 'Addhome' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+        >favourite-list</a
+      >
+     <% } else { %>
+      <a
+        href="/host/host-home-list"
+        class="<%= currentPage === 'host-home-list' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+        >HostHomelist</a
+      >
+
+      <a
+        href="/host/addhome"
+        class="<%= currentPage === 'Addhome' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+        >AddHome</a
+      > 
+      <% } %>
+      <% } %>
+      
+      <% if (!isLoggedIn) { %>
+
+      <a
+        href="/login"
+        class="<%= currentPage === 'Login' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+        >Login</a
+      >
+
+      <a
+        href="/signup"
+        class=<%= currentPage === 'Login' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+        >Signup</a
+      >
+
+      <% } else { %>
+      
+        <form action="/logout" method="POST" class="inline">
+          <button
+            class="<%= currentPage === 'Login' ? ' text-yellow-200 font-medium transition' :' hover:text-yellow-200 font-medium transition'%>"
+          >
+            Logout
+          </button>
+        </form>
+      
+      <% } %>
+    </nav>
+  </div>
+</header>

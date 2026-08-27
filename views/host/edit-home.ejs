@@ -1,0 +1,94 @@
+<%- include ('../partials/head') %>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+
+    <!-- Header -->
+   <%- include('../partials/nav') %>
+
+    <!-- Main Section --> 
+    <main class="flex justify-center items-center mt-16">
+      <form action="/host/<%= editing ? "edit-home" : "addhome" %>" method="POST"  enctype="multipart/form-data"
+        class="bg-white p-8 rounded-2x1 shadow-lg w-full max-w-md border border-red-100">
+        
+        <h2 class="text-2xl font-semibold text-red-600 mb-6 text-center"><%= editing ? "Edit" : "Add" %> your home</h2>
+        
+        <div class="mb-4">
+          <input type = "hidden" name="id" value="<%= editing ? Home._id : ''%>" >
+          <input 
+            type="text" 
+            id="houseName" 
+            value="<%= editing ? Home.houseName : '' %>"
+            name="houseName" 
+            placeholder="Enter house name"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          >
+        </div>
+
+        
+        
+        <div class="mb-4">
+         
+          <input 
+            type="text" 
+            id="Pricepernight"
+            value="<%= editing ? Home.Pricepernight : '' %>" 
+            name="Pricepernight" 
+            placeholder="Enter price per night"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          >
+        </div>
+        <div class="mb-4">
+          
+          <input 
+            type="text" 
+            id="Locations" 
+            value="<%= editing ? Home.Locations : '' %>" 
+            name="Locations" 
+            placeholder="Enter Locations"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          >
+        </div>
+<div class="mb-4">
+          
+          <input 
+            type="text" 
+            id="Ratings" 
+            value="<%= editing ? Home.Ratings : '' %>" 
+            name="Ratings" 
+            placeholder="Ratings"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          >
+        </div>
+        <div class="mb-4">
+          <input 
+            type="file" 
+            id="Photo"
+            name="Photo" 
+            accept="images/*"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required
+          >
+        </div>
+        <textarea
+          
+            name="description" 
+            placeholder="Describe your home"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+            required><%= editing ? Home.description : '' %></textarea>
+          
+        </div>
+        
+        <button 
+          type="submit" 
+          class="w-full bg-red-600 text-white font-medium py-2 rounded-lg hover:bg-red-700 transition">
+          <%= editing ? "Update home" : "Add home"%>
+        </button>
+      </form>
+    </main>
+
+  </body>
+</html>

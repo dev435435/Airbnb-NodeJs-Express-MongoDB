@@ -1,0 +1,21 @@
+<%- include('partials/head') %>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+
+    <!-- Header -->
+   <%- include('partials/nav') %>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col justify-center items-center text-center">
+      <div class="bg-white shadow-lg rounded-2xl p-8 border border-red-100 w-full max-w-md">
+        <h2 class="text-4xl font-bold text-red-600 mb-4">404</h2>
+        <p class="text-gray-700 text-lg mb-6">Oops! The page you’re looking for doesn’t exist.</p>
+        <a href="/" 
+           class="bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+          Go Back Home
+        </a>
+      </div>
+    </main>
+
+  </body>
+</html>

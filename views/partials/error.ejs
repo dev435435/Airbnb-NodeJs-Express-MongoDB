@@ -1,0 +1,10 @@
+<% if (errors && errors.length > 0) { %>
+<div class="w-full bg-red-100 border border-red-700 rounded-lg px-4 py-2">
+  <strong class="ml-1 text-red-700">Error!</strong>
+  <ul class="ml-6 mt-1 list-disc text-red-700">
+    <% errors.forEach(error => { %>
+      <li><%= error %></li>
+    <% }) %>
+  </ul>
+</div>
+<% } %>
