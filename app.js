@@ -5,7 +5,7 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const mongoDbStore = require("connect-mongodb-session")(session);
-const DB_PATH = "mongodb+srv://devanarkimas_db_user:vfyafXXB7RlxRJAP@cluster0.craillb.mongodb.net/?appName=Cluster0";
+const DB_PATH = "mongodb+srv://USERNAME:PASSWORD@cluster0.craillb.mongodb.net/?appName=Cluster0";
 const multer = require("multer");
 const { mongoose } = require("mongoose");
 
