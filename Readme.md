@@ -1,4 +1,4 @@
-click/copy on this link for live video of the project = https://drive.google.com/file/d/1IQlfFmObEESR8gmEwmQm8dzb5q85tc6T/view?usp=sharing
+click/copy on this link for live video of the project(Watch in 2x) = https://drive.google.com/file/d/1IQlfFmObEESR8gmEwmQm8dzb5q85tc6T/view?usp=sharing
 
 # 🏠 Airbnb Clone
 
