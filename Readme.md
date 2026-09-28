@@ -74,7 +74,7 @@ MongoDB is used to store and manage:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git clone https://github.com/dev435435/Airbnb-NodeJs-Express-MongoDB
 ```
 
 ### 2. Navigate to the project
